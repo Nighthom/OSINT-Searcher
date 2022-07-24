@@ -4,7 +4,7 @@ class FileManager:
     
     
     def save(self, data):
-        filename = input("What file name did you want to save?")
+        filename = input("[*] What file name did you want to save?")
         self.save_file(f"result/{filename}", data)
         
     

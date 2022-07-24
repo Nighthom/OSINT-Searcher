@@ -4,7 +4,8 @@ class SearchEngine:
     def __init__(self, api):
         self.api = api
         self.result = ""
-        self.query = input("[*] What query do you want to search?: ")
+        self.query = input("[*] What query do you want to search?(You can use \
+query filter as like this: ip, port): ")
         self.count = input("[*] What count of result do you want to search?: ")
 
         if self.count == "":
