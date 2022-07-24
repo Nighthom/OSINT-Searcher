@@ -1,3 +1,5 @@
+from queryparser import QueryParser
+
 class SearchEngine:
     def __init__(self, api):
         self.api = api
@@ -42,7 +44,10 @@ class SearchEngine:
     def censys_run(self):
         api = self.api.censysapi
         PER_PAGE = 1
-        
+        queryparser = QueryParser()
+
+        self.query = queryparser.to_censys_query(self.query)
+
         if self.count == None:
             results = api.search(self.query, per_page=PER_PAGE)
         else:
